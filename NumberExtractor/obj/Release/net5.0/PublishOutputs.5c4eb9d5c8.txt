@@ -1,0 +1,6 @@
+C:\Users\crist\source\repos\NumberExtractor\NumberExtractor\bin\Release\net5.0\publish\NumberExtractor.exe
+C:\Users\crist\source\repos\NumberExtractor\NumberExtractor\bin\Release\net5.0\publish\NumberExtractor.dll
+C:\Users\crist\source\repos\NumberExtractor\NumberExtractor\bin\Release\net5.0\publish\NumberExtractor.deps.json
+C:\Users\crist\source\repos\NumberExtractor\NumberExtractor\bin\Release\net5.0\publish\NumberExtractor.runtimeconfig.json
+C:\Users\crist\source\repos\NumberExtractor\NumberExtractor\bin\Release\net5.0\publish\NumberExtractor.pdb
+C:\Users\crist\source\repos\NumberExtractor\NumberExtractor\bin\Release\net5.0\publish\System.Drawing.Common.dll

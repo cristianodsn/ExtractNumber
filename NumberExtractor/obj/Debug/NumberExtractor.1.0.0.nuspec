@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>NumberExtractor</id>
+    <version>1.0.0</version>
+    <authors>NumberExtractor</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="System.Drawing.Common" version="8.0.0-preview.7.23375.5" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\crist\source\repos\NumberExtractor\NumberExtractor\bin\Debug\net5.0\NumberExtractor.runtimeconfig.json" target="lib\net5.0\NumberExtractor.runtimeconfig.json" />
+    <file src="C:\Users\crist\source\repos\NumberExtractor\NumberExtractor\bin\Debug\net5.0\NumberExtractor.dll" target="lib\net5.0\NumberExtractor.dll" />
+  </files>
+</package>

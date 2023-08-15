@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "yq5GRZzV2oUYrPyTOdDzgXhmySREOMRpQYYQsCJ6W7f/iNXFkHoTyd1q+kpoa7lttabne4Jv9UrDGvA14TQYRA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\crist\\source\\repos\\NumberExtractor\\NumberExtractor\\NumberExtractor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\system.drawing.common\\8.0.0-preview.7.23375.5\\system.drawing.common.8.0.0-preview.7.23375.5.nupkg.sha512"
+  ],
+  "logs": []
+}
