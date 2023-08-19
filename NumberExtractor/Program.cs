@@ -36,7 +36,7 @@ namespace SeuNamespace
                         int indice = 1;
                         foreach (string number in allNumbers)
                         {
-                            sw.WriteLine($"CONTATO {indice.ToString("D2")}: {number}");
+                            sw.WriteLine($"CONTATO {indice.ToString("D2")}:, {number}");
                             indice++;
                         }
                     }

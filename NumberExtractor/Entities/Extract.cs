@@ -6,42 +6,45 @@ namespace NumberExtractor.Entities
 {
     static class Extract
     {
-        public static string [] FindNumber(string[] lines)
-        {          
+        public static string[] FindNumber(string[] lines)
+        {
             List<string> principalList = new List<string>();
             List<string> allFileLines = new List<string>();
             string[] vetNumbers;
-           
+
             foreach (string s in lines)
-            {
+            {                
                 string aux = GetNumbers(s);
-                allFileLines.Add(aux);
+                if(aux != null)
+                {
+                    allFileLines.Add(aux);
+                }
             }
 
             Console.Write("How many DDDs number do you want assign in your search? ");
-            int[] dddVet = new int [int.Parse(Console.ReadLine())];
-            for(int i = 0; i < dddVet.Length; i++)
+            int[] dddVet = new int[int.Parse(Console.ReadLine())];
+            for (int i = 0; i < dddVet.Length; i++)
             {
-                Console.Write($"Enter the #{i+1} DDD ex; 11 : ");
+                Console.Write($"Enter the #{i + 1} DDD ex; 11 : ");
                 dddVet[i] = int.Parse(Console.ReadLine());
             }
-                       
+
             foreach (string s in allFileLines)
             {
-                 List<string> phoneNumbers = RemoveSameNumber(DDITest(s), DDDTest(s, dddVet), NumberWithoutPrefix(s));
+                List<string> phoneNumbers = RemoveSameNumber(DDITest(s), DDDTest(s, dddVet), NumberWithoutPrefix(s));
                 // ---> Precisamos passar com prioridade as listas onde os números estejam mais completos, instânciando-os
                 // primeiro que os com menos informações. Caso isso não ocorra, podemos pegar um número incompleto, usá-lo como parâmetro e depois 
                 // remover um outro número com mais especifícações. Ex: Pagamos o número 9 5512-3487 e comparamos com o número +55 11 9 5512-3487,
                 // Nesse caso, vamos acabar removendo da lista o número +55 11 9 5512-3487, e não queremos isso. Queremos manter o número mais completo
                 // e remover o outro com menos informações.
-                foreach(string obj in phoneNumbers)
+                foreach (string obj in phoneNumbers)
                 {
                     principalList.Add(obj);
                 }
             }
 
             vetNumbers = principalList.ToArray();
-            
+
             return vetNumbers;
         }
 
@@ -83,14 +86,14 @@ namespace NumberExtractor.Entities
             return numberList;
         }
 
-        static List<string> DDDTest(string findNumber, int [] ddds)
+        static List<string> DDDTest(string findNumber, int[] ddds)
         {
             List<string> numberList = new List<string>();
-            foreach(int ddd in ddds)
+            foreach (int ddd in ddds)
             {
                 string s = ddd + "9";
                 List<string> aux = new List<string>(NumberVerification(findNumber, s));
-                foreach(string obj in aux)
+                foreach (string obj in aux)
                 {
                     numberList.Add(obj);
                 }
