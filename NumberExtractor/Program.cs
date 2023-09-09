@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using NumberExtractor.Entities;
-using System.Collections.Generic;
 namespace SeuNamespace
 {
     class Program
@@ -9,7 +8,7 @@ namespace SeuNamespace
         static void Main(string[] args)
         {
             ////C:\Users\crist\Downloads\contacts.txt
-            ////C:\Users\crist\OneDrive\Área de Trabalho
+            ////C:\Users\crist\OneDrive\Área de Trabalho\txtTeste.txt
 
 
             Console.Write("Enter the file name and extension: ");
@@ -21,6 +20,7 @@ namespace SeuNamespace
             try
             {
                 string[] lines = File.ReadAllLines(source);
+
                 string[] allNumbers = Extract.FindNumber(lines);
 
                 if (File.Exists(localDestination))

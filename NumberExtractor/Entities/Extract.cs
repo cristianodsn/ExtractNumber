@@ -39,7 +39,11 @@ namespace NumberExtractor.Entities
                 // e remover o outro com menos informações.
                 foreach (string obj in phoneNumbers)
                 {
-                    principalList.Add(obj);
+                    if (obj.Contains('+') && obj.IndexOf('+') == 0 || !obj.Contains('+'))
+                    {
+                        principalList.Add(obj);
+
+                    }
                 }
             }
 
@@ -76,14 +80,15 @@ namespace NumberExtractor.Entities
                     numbers += aux;
                 }
             }
-
             return numbers;
         }
 
         static List<string> DDITest(string findNumber)
         {
-            List<string> numberList = new List<string>(NumberVerification(findNumber, "+55119"));
+            List<string> numberList = new List<string>(NumberVerification(findNumber, "+55119"));                       
+           
             return numberList;
+
         }
 
         static List<string> DDDTest(string findNumber, int[] ddds)
@@ -93,10 +98,7 @@ namespace NumberExtractor.Entities
             {
                 string s = ddd + "9";
                 List<string> aux = new List<string>(NumberVerification(findNumber, s));
-                foreach (string obj in aux)
-                {
-                    numberList.Add(obj);
-                }
+               
             }
             return numberList;
         }
@@ -104,7 +106,7 @@ namespace NumberExtractor.Entities
         static List<string> NumberWithoutPrefix(string findNumber)
         {
             List<string> numberList = new List<string>(NumberVerification(findNumber, "9"));
-
+                      
             return numberList;
         }
 
@@ -137,7 +139,7 @@ namespace NumberExtractor.Entities
 
                 auxNumber = auxNumber.Remove(auxIndex, stringIndice.Length);
                 auxIndex = auxNumber.IndexOf(stringIndice);
-            }
+            }                      
 
             return numberList;
         }
