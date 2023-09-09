@@ -88,7 +88,6 @@ namespace NumberExtractor.Entities
             List<string> numberList = new List<string>(NumberVerification(findNumber, "+55119"));                       
            
             return numberList;
-
         }
 
         static List<string> DDDTest(string findNumber, int[] ddds)
@@ -97,7 +96,7 @@ namespace NumberExtractor.Entities
             foreach (int ddd in ddds)
             {
                 string s = ddd + "9";
-                List<string> aux = new List<string>(NumberVerification(findNumber, s));
+                numberList = numberList.Concat(NumberVerification(findNumber, s)).ToList();
                
             }
             return numberList;
